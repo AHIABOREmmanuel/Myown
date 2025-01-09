@@ -1,0 +1,82 @@
+<header class="bg-primary py-5">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-md-8">
+                <div class="text-center my-5">
+                    <h1 class="display-5 fw-bolder text-white mb-2">Retrouvez vos engins ou papiers saisis facilement</h1>
+                    <p class="lead text-white-50 mb-4">La plateforme pour localiser vos objets saisis dans les commissariats en temps réel.</p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <button class="btn btn-light btn-lg px-4" data-bs-toggle="modal" data-bs-target="#searchModal">Rechercher</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Modal Form -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Recherche de saisies</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="searchInput" type="text" placeholder="Entrer votre numéro d'immatriculation ou votre numéro d'identification" />
+                        <label for="searchInput">Entrer votre numéro d'immatriculation ou votre numéro d'identification</label>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" type="submit">Suivant</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Section Carte -->
+<section class="bg-light py-5" id="map">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">Localisation des Commissariats</h2>
+            <p class="lead mb-0">Une carte interactive pour afficher les commissariats où vos objets sont conservés.</p>
+        </div>
+        <div id="mapContainer" style="height: 500px;">
+            <!-- La carte interactive sera ajoutée ici avec une bibliothèque comme Leaflet -->
+        </div>
+    </div>
+</section>
+
+<!-- Section Contact -->
+<section class="py-5" id="contact">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">Contactez-nous</h2>
+            <p class="lead mb-0">Pour toute question ou assistance, nous sommes là pour vous aider.</p>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <form>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="contactName" type="text" placeholder="Votre nom" />
+                        <label for="contactName">Nom complet</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="contactEmail" type="email" placeholder="votre-email@example.com" />
+                        <label for="contactEmail">Adresse email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" id="contactMessage" placeholder="Votre message" style="height: 10rem"></textarea>
+                        <label for="contactMessage">Message</label>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg" type="submit">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
