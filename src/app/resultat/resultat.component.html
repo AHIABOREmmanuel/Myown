@@ -1,31 +1,22 @@
-<app-nav-bar></app-nav-bar>
-<app-main></app-main>
-<app-footer></app-footer>
-<!-- Large Modal for Displaying Search Results -->
-<div class="modal fade" id="searchResultsModal" tabindex="-1" aria-labelledby="searchResultsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="searchResultsModalLabel">Détails de la saisie</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Card displaying the result -->
-          <div class="card" style="width: 100%;">
-            <img class="card-img-top" src="https://example.com/engins.jpg" alt="Image de l'engin" />
-            <div class="card-body">
-              <h5 class="card-title">Engin saisi : Moto Yamaha</h5>
-              <p class="card-text"><strong>Agent ayant opéré la saisie :</strong> Agent Dupont</p>
-              <p class="card-text"><strong>Date de saisie :</strong> 2024-01-01</p>
-              <p class="card-text"><strong>Commissariat :</strong> Commissariat de Lomé</p>
-            </div>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4" *ngFor="let engin of engins">
+      <div class="card shadow mb-4" style="max-width: 20rem;">
+        <img src="/assets/img/3d white truck.jpeg" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title">
+            Votre engin immatriculé: {{ engin.immatriculation }}
+          </h5>
+          <h5 class="text-muted small">
+            Se trouve au commissariat: {{ engin.commissariat }}
+          </h5>
+          <div class="text-muted small">
+            <i class="fas fa-map-marker-alt"></i>
+            <h5 class="text-muted small"> Type d'engin: {{ engin.vehicule }}</h5>
+
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-          <button type="button" class="btn btn-primary">Prendre des actions</button>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
