@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Engin } from '../models/engin';
 import { EnginService } from '../services/Engins/engin.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -18,7 +20,11 @@ export class MainComponent {
 
   rechercherEngin() {
     if (this.immatriculation.trim() === '') {
-      this.erreur = "Veuillez entrer un numéro d'immatriculation.";
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Veuillez entrer un numéro d'immatriculation.",
+      });
       return;
     }
 
@@ -28,14 +34,22 @@ export class MainComponent {
           if (data.length > 0) {
             localStorage.setItem('resultats', JSON.stringify(data));
             this.erreur = '';
-            this.router.navigate(['resultats'])
+            this.router.navigate(['resultats']);
           } else {
-            this.erreur = "Aucun engin trouvé pour cette immatriculation.";
+            Swal.fire({
+              icon: "info",
+              title: "Aucun résultat",
+              text: "Aucun engin trouvé pour cette immatriculation."
+            });
           }
         },
         error: (err) => {
           console.error(err);
-          this.erreur = "Une erreur est survenue.";
+          Swal.fire({
+            icon: "error",
+            title: "Erreur",
+            text: "Une erreur est survenue lors de la recherche."
+          });
         }
       });
   }

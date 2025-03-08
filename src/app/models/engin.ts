@@ -5,6 +5,7 @@ export interface Engin {
   commissariat: string;
   motif: string;
   vehicule: string
+  adresse: string
   commissariatId:string
   motifId:string
   vehiculeId:string
